@@ -2,10 +2,13 @@ import Student from "src/models/Student";
 import type { IStudentService } from "src/interfaces/StudentInterface";
 
 export class StudentController {
-    constructor(private studentService: IStudentService) {}
+    private studentService: IStudentService;
+    constructor(service: IStudentService) {
+        this.studentService = service;
+    }
 
     public addStudent(name: string, age: number, course: string) {
-        const student = new Student( name, age, course);
+        const student = new Student(name, age, course);
         this.studentService.addStudent(student);
         return true;
     }
@@ -18,4 +21,3 @@ export class StudentController {
         return this.studentService.deleteStudent(id);
     }
 }
-
