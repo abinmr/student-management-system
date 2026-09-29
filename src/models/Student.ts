@@ -1,8 +1,13 @@
 import User from "@/models/User";
 
 class Student extends User {
-    public getUser(): string {
-        return "Student";
+    constructor(
+        name: string,
+        public age: number,
+        public course: string,
+    ) {
+        super(name);
     }
 }
 
+export default Student;

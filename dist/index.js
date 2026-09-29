@@ -13,8 +13,15 @@ function main() {
         const choice = prompt(`Choose an option: `);
         switch (choice) {
             case "1":
+                const id = prompt("Enter student id: ");
                 const name = prompt("Enter name: ");
+                const age = Number(prompt("Enter student age: "));
+                const course = prompt("Enter student course: ");
                 console.log(`Adding student: ${name}`);
+                break;
+            case "2":
+                break;
+            case "3":
                 break;
             case "4":
                 console.log("Exiting...");

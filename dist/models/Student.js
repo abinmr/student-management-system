@@ -1,7 +1,12 @@
 import User from "@/models/User";
 class Student extends User {
-    getUser() {
-        return "Student";
+    age;
+    course;
+    constructor(name, age, course) {
+        super(name);
+        this.age = age;
+        this.course = course;
     }
 }
+export default Student;
 //# sourceMappingURL=Student.js.map

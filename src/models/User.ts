@@ -1,10 +1,7 @@
 class User {
-    constructor(protected id: number, protected name: string) {
-    }
-
-    public getUser(): string {
-        return "User";
-    }
+    constructor(
+        protected name: string,
+    ) {}
 }
 
 export default User;

@@ -1,12 +1,7 @@
 class User {
-    id;
     name;
-    constructor(id, name) {
-        this.id = id;
+    constructor(name) {
         this.name = name;
-    }
-    getUser() {
-        return "User";
     }
 }
 export default User;
