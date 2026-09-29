@@ -1,0 +1,41 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "A modular Student Management System built with TypeScript to demonstrate Object-Oriented Programming (OOP), SOLID principles, and clean software architecture. The project is organized into separate layers such as models, repositories, services, and controllers, using interfaces, dependency injection, inheritance, polymorphism, and TypeScript utility types for a maintainable and type-safe application.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node dist/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abinmr/student-management-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abinmr/student-management-system/issues"
+  },
+  "homepage": "https://github.com/abinmr/student-management-system#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "@types/pg": "^8.23.1",
+    "@types/prompt-sync": "^4.2.3",
+    "prisma": "^7.10.0"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "dotenv": "^18.0.4",
+    "pg": "^8.23.0",
+    "prompt-sync": "^4.2.0"
+  }
+}

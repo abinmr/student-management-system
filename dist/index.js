@@ -1,6 +1,5 @@
 import promptSync from "prompt-sync";
 const prompt = promptSync();
-
 function main() {
     while (true) {
         console.log(`
@@ -11,9 +10,7 @@ function main() {
         3. Delete Student
         4. Exit
         `);
-
         const choice = prompt(`Choose an option: `);
-
         switch (choice) {
             case "1":
                 const id = prompt("Enter student id: ");
@@ -34,5 +31,5 @@ function main() {
         }
     }
 }
-
 main();
+//# sourceMappingURL=index.js.map

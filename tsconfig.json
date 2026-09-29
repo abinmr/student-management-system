@@ -4,29 +4,32 @@
     // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
-    "baseUrl": ".",
     "paths": {
+        "*": ["./*"],
         "@/*": ["./src/*"],
         "@models/*": ["./src/models/*"],
     },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "es2022",
+    "module": "preserve",
     "target": "esnext",
-    "types": [],
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
+    // "types": [],
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
     "moduleResolution": "bundler",
     // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
+    "lib": ["esnext"],
+    "types": [
+      "node"
+    ],
+    "esModuleInterop": true,
     // and npm install -D @types/node
 
     // Other Outputs
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "declaration": false,
+    "declarationMap": false,
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
@@ -48,5 +51,8 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+    "resolveJsonModule": true,
+  },
+    "include": ["src/**/*"],     // Tells TS to ONLY compile files inside src/
+    "exclude": ["node_modules"]
 }
