@@ -1,16 +1,10 @@
-import Student from "src/models/Student";
-import type { IStudentService } from "src/interfaces/StudentInterface";
+import type { IStudentService, StudentData } from "src/interfaces/StudentInterface";
 
 export class StudentController {
-    private studentService: IStudentService;
-    constructor(service: IStudentService) {
-        this.studentService = service;
-    }
+    constructor(private studentService: IStudentService) {}
 
-    public addStudent(name: string, age: number, course: string) {
-        const student = new Student(name, age, course);
-        this.studentService.addStudent(student);
-        return true;
+    public addStudent(data: StudentData) {
+        return this.studentService.addStudent(data);
     }
 
     public viewAllStudent() {

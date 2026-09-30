@@ -1,7 +1,13 @@
 import promptSync from "prompt-sync";
+import StudentRepository from "./repositroy/StudentRepository";
+import StudentService from "./service/StudentService";
+import { StudentController } from "./controllers/StudentController";
 const prompt = promptSync();
 
-function main() {
+async function main() {
+    const studentRepository = new StudentRepository();
+    const studentService = new StudentService(studentRepository);
+    const studentController = new StudentController(studentService);
     while (true) {
         console.log(`
         ===== Student Management System =====
@@ -16,13 +22,15 @@ function main() {
 
         switch (choice) {
             case "1":
-                const id = prompt("Enter student id: ");
                 const name = prompt("Enter name: ");
                 const age = Number(prompt("Enter student age: "));
                 const course = prompt("Enter student course: ");
                 console.log(`Adding student: ${name}`);
+                studentController.addStudent({ name, age, course })
                 break;
             case "2":
+                const data = await studentController.viewAllStudent();
+                console.log(data);
                 break;
             case "3":
                 break;
@@ -34,5 +42,6 @@ function main() {
         }
     }
 }
+
 
 main();
