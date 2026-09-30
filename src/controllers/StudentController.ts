@@ -3,15 +3,15 @@ import type { IStudentService, StudentData } from "src/interfaces/StudentInterfa
 export class StudentController {
     constructor(private studentService: IStudentService) {}
 
-    public addStudent(data: StudentData) {
+    public async addStudent(data: StudentData) {
         return this.studentService.addStudent(data);
     }
 
-    public viewAllStudent() {
+    public async viewAllStudent() {
         return this.studentService.viewAllStudent();
     }
 
-    public deleteStudent(id: number) {
+    public async deleteStudent(id: number) {
         return this.studentService.deleteStudent(id);
     }
 }
