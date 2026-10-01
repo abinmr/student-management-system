@@ -6,10 +6,12 @@ datasource db {
     provider = "postgresql"
 }
 
-model student {
+model Student {
     id        Int      @id @default(autoincrement())
     name      String
     age       Int
     course    String
     createdAt DateTime @default(now())
+
+    @@map("student")
 }
