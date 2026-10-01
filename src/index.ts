@@ -34,16 +34,16 @@ async function main() {
 
                 try {
                     const newStudent = await studentController.addStudent({ name, age, course });
-                    console.log("Student Added Successfully", newStudent);
+                    console.log(green("Student Added Successfully"), newStudent);
                 } catch (err: any) {
-                    console.log("Failed adding student", err.message);
+                    console.log(red("Failed adding student"), err.message);
                 }
                 break;
             case "2":
                 try {
                     const data = await studentController.viewAllStudent();
                     if (data.length === 0) {
-                        console.log("\x1b[31m%s\x1b[0m", "No students founds");
+                        console.log(red("No students founds"));
                     } else {
                         console.table(data);
                     }
@@ -56,17 +56,17 @@ async function main() {
                 try {
                     const success = await studentController.deleteStudent(id);
                     if (success) {
-                        console.log("Successfully student user");
+                        console.log(green("Successfully deleted student."));
                     }
                 } catch (err: any) {
-                    console.log("Error deleteing student");
+                    console.log(red("Error deleteing student"));
                 }
                 break;
             case "4":
                 console.log("Exiting...");
                 return;
             default:
-                console.log("Invalid option: Try again");
+                console.log(red("Invalid option: Try again"));
         }
     }
 }
