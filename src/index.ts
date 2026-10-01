@@ -2,7 +2,7 @@ import promptSync from "prompt-sync";
 import StudentRepository from "./repositroy/StudentRepository";
 import StudentService from "./service/StudentService";
 import { StudentController } from "./controllers/StudentController";
-import { green, yellow, red } from "console-log-colors";
+import { green, yellow, red, blue } from "console-log-colors";
 const prompt = promptSync();
 
 async function main() {
@@ -12,7 +12,7 @@ async function main() {
     while (true) {
         console.log("\n");
         console.log(`
-        ===== Student Management System ===== 
+        ${blue("===== Student Management System ===== ")}
 
         ${green("1. Add Student")}
         ${yellow("2. View Students")}
@@ -60,7 +60,6 @@ async function main() {
                     }
                 } catch (err: any) {
                     console.log("Error deleteing student");
-                    console.error(err);
                 }
                 break;
             case "4":
